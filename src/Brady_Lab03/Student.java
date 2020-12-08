@@ -1,5 +1,6 @@
 // Student.java
-// Zack Brady | IST 240
+// IST 240 - Lab 03
+// Zack Brady
 
 public class Student {
 
@@ -8,15 +9,11 @@ public class Student {
     private int age;
     private double GPA;
 
-    public Student(String firstName, String lastName, int age, double gpa) {
+    public Student(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.GPA = gpa;
-    }
-
-    public String getInfo() {
-        return this.firstName + " " + this.lastName + "  " + this.age + " " + this.GPA;
+        this.GPA = SemesterGPA();
     }
 
     public String getName() {
@@ -39,10 +36,10 @@ public class Student {
         return GPA;
     }
 
-    public void setGPA(double GPA) {
-        this.GPA = GPA;
+    public String getStudentInfo() {
+        return getName() + "  " + getAge() + " " + getGPA();
     }
-
+    
     public double SemesterGPA() {
         double RandomGPA = (Math.random() * 4.00) + 0.00;
         return RandomGPA;
